@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../app/locale/locale_controller.dart';
+import '../locale/locale_controller.dart';
 
 Widget cardView({required Widget child, double paddding = 8.0}) {
   return Card(

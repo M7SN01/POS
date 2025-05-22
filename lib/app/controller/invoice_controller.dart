@@ -15,8 +15,6 @@ class MainInvoiceController extends GetxController {
   List<InvoiceItem> filteredItemsByClass = []; // Filtered items for the selected class
   List<Map<String, String>> classes = [];
 
-  bool isRestPOS = false;
-
   bool isClassGrid = true; // Flag to toggle between class grid and item grid
   String selectedClass = ""; // The selected class
 
@@ -228,11 +226,6 @@ class MainInvoiceController extends GetxController {
         update();
       }
     }
-  }
-
-  void changeRestPOS() {
-    isRestPOS = !isRestPOS; // Toggle the isRestPOS flag
-    update(); // Update the UI
   }
 
   void filterSearch(String query) {

@@ -104,7 +104,7 @@ class LeftCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                     ),
                   ),
-                  onPressed: () => controller.changeRestPOS(),
+                  onPressed: () {},
                   child: const Text(
                     'payment',
                     style: TextStyle(

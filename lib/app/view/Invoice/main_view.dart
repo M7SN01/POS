@@ -1,17 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'totals_card.dart';
-import 'search_barcode_card.dart';
+import 'payment_view.dart';
+import 'search_barcode_view.dart';
 import '../../../widget/widgest.dart';
 import '../../controller/invoice_controller.dart';
-import 'center_card.dart';
+import 'invoice_items_view.dart';
 
-class Invoice extends StatelessWidget {
-  const Invoice({super.key});
+class NormalInvoice extends StatelessWidget {
+  const NormalInvoice({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Point Of Sales"),
+        centerTitle: true,
+      ),
       body: GetBuilder<MainInvoiceController>(
         init: MainInvoiceController(),
         builder: (controller) {
@@ -22,9 +26,9 @@ class Invoice extends StatelessWidget {
               children: [
                 //right part
                 Expanded(
-                  flex: controller.isRestPOS ? 2 : 1,
+                  flex: 1,
                   child: cardView(
-                    child: controller.isRestPOS ? const RestRight() : const SearchAndBarcode(),
+                    child: const SearchAndBarcode(),
                   ),
                 ),
 
@@ -34,22 +38,20 @@ class Invoice extends StatelessWidget {
 
                 //center part
                 Expanded(
-                  flex: controller.isRestPOS ? 2 : 3,
+                  flex: 3,
                   child: cardView(
-                    child: controller.isRestPOS
-                        ? const RestCenterCard()
-                        : Column(
-                            children: [
-                              buildHeaderRow(),
-                              const Expanded(
-                                flex: 1,
-                                child: SizedBox(
-                                  height: 1,
-                                  child: CenterCard(),
-                                ),
-                              ),
-                            ],
+                    child: Column(
+                      children: [
+                        buildHeaderRow(),
+                        const Expanded(
+                          flex: 1,
+                          child: SizedBox(
+                            height: 1,
+                            child: CenterCard(),
                           ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
 

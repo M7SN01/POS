@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../controller/invoice_controller.dart';
-import 'center_card.dart';
 import '../../../widget/widgest.dart';
 
 class SearchAndBarcode extends StatelessWidget {
@@ -188,19 +187,5 @@ class SearchAndBarcode extends StatelessWidget {
         ],
       );
     });
-  }
-}
-
-class RestRight extends StatelessWidget {
-  const RestRight({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        buildHeaderRow(),
-        const Expanded(child: CenterCard()),
-      ],
-    );
   }
 }
